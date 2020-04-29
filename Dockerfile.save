@@ -1,0 +1,18 @@
+from alpine:latest
+Run apk add --no-cache python3-dev \
+	&& pip3 install --upgrade pip \
+	&& pip install --upgrade pip
+
+
+WORKDIR /app
+
+COPY . /app 
+
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+
+ENTRYPOINT ["Python
+"]
+CMD ["app.py"]
